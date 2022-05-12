@@ -1,6 +1,6 @@
 # Players
 
-Link de produccion: <a>https://main--players-jewif.netlify.app/#/</a>
+Link de produccion: <a>https://main--players-jewif.netlify.app/#/
 
 El proyecto fue creado con [Angular framework](https://github.com/angular/angular-cli) version 13.3.3.
 
