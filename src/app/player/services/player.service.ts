@@ -10,7 +10,7 @@ export class PlayerService {
   private uri = environment.host;
   private port = environment.port;
   private segmento = 'player';
-  private url = `${this.uri}:${this.port}/${this.segmento}`;
+  private url = this.port !== 0 ? `${this.uri}:${this.port}/${this.segmento}` : `${this.uri}/${this.segmento}`;
 
   constructor(
     private readonly _httpClient: HttpClient,
@@ -21,7 +21,7 @@ export class PlayerService {
     let params = new HttpParams()
       .set('offset', offset)
       .set('limit', limit)
-      .set('search', search)
+      .set('search', search);
     return this._httpClient
       .get<[PlayerInterface[], number]>(this.url, {params});
   }

@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  host: 'http://localhost',
-  port: '3000',
+  host: 'https://reto-jewif.herokuapp.com/',
+  port: 0,
 };
