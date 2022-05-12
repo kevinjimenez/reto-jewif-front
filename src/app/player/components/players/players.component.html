@@ -1,0 +1,22 @@
+<app-nav>
+</app-nav>
+<section *ngIf="players">
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <app-search-bar (searchValue)="searchValue($event)">
+      </app-search-bar>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <app-table-player [players]="players"
+                        [totalPlayers]="totalPlayers"
+                        (playerr)="loadPlayer($event)">
+      </app-table-player>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+</section>

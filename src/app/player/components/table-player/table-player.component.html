@@ -1,0 +1,54 @@
+<h3>Score players</h3>
+<section class="table-container">
+  <p-table [value]="players"
+           [lazy]="true"
+           [columns]="playerColumns"
+           (onLazyLoad)="loadPlayers($event)"
+           responsiveLayout="scroll"
+           [paginator]="true"
+           [rows]="row"
+           [totalRecords]="totalPlayers"
+           [loading]="loading">
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns">
+          {{col.header}}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-player let-columns="columns">
+      <tr>
+        <td *ngFor="let col of columns">
+
+          <section *ngIf="col.field === 'id'">
+            {{player[col.field]}}
+          </section>
+
+          <section *ngIf="col.field === 'avatar'">
+            <app-img [img]="player[col.field]">
+            </app-img>
+          </section>
+
+          <section *ngIf="col.field === 'nickname'">
+            {{player[col.field]}}
+          </section>
+
+          <section *ngIf="col.field === 'status'">
+            {{player[col.field]}}
+          </section>
+
+          <section *ngIf="col.field === 'balance'">
+            {{player[col.field]}}
+          </section>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage" let-columns>
+      <tr>
+        <td [attr.colspan]="columns.length">
+          No se encontraron registros
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</section>
